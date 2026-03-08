@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "name": "Honda City",
+        "seats": 5,
+        "fuel": "Petrol",
+        "year": 2020,
+        "model": "Top",
+        "milage": "18 km/l",
+        "price": 1500,
+        "transmission": "true",
+        "image": "https://wallpaperaccess.com/full/634444.jpg",
+        "about": "The Honda City is a popular compact sedan known for its fuel efficiency, comfortable interior, and advanced features."
+    },
+    {
+        "id": 2,
+        "name": "Maruti Swift",
+        "seats": 5,
+        "fuel": "Petrol",
+        "year": 2019,
+        "model": "VXI",
+        "milage": "22 km/l",
+        "price": 1200,
+        "transmission": "false",
+        "image": "https://wallpaperaccess.com/full/634444.jpg",
+        "about": "Maruti Swift is a sporty hatchback known for its mileage and low maintenance."
+    },
+    {
+        "id": 3,
+        "name": "Hyundai Creta",
+        "seats": 5,
+        "fuel": "Diesel",
+        "year": 2021,
+        "model": "SX",
+        "milage": "19 km/l",
+        "price": 2000,
+        "transmission": "true",
+        "image": "https://wallpaperaccess.com/full/634444.jpg",
+        "about": "Hyundai Creta is a premium SUV offering comfort, power, and modern design."
+    },
+    {
+        "id": 4,
+        "name": "Kia Seltos",
+        "seats": 5,
+        "fuel": "Petrol",
+        "year": 2022,
+        "model": "GT Line",
+        "milage": "17 km/l",
+        "price": 2200,
+        "transmission": "false",
+        "image": "https://wallpaperaccess.com/full/634444.jpg",
+        "about": "Kia Seltos is a stylish SUV with advanced safety and tech features."
+    },
+    {
+        "id": 5,
+        "name": "Toyota Fortuner",
+        "seats": 7,
+        "fuel": "Diesel",
+        "year": 2020,
+        "model": "4x4",
+        "milage": "14 km/l",
+        "price": 3500,
+        "transmission": "false",
+        "image": "https://wallpaperaccess.com/full/634444.jpg",
+        "about": "Toyota Fortuner is a powerful SUV suitable for off-road and long drives."
+    }
+]
