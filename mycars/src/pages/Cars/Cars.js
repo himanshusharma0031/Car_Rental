@@ -3,12 +3,14 @@ import { useState, useEffect } from 'react';
 import axios from "axios";
 //import CarData from '../../Data/carsData.json';
 import CarCard from '../../components/CarCard';
+import "./Car.css";
+const API = process.env.REACT_APP_API_URL;
 const Cars =  () => {
   const [carData,setCarData]=useState([]);
   useEffect(() =>{
       const fetchCarData = async () => {
         try{
-          const res = await axios.get("http://localhost:8000/api/v1/car/getallcars");
+          const res = await axios.get(`${API}/api/v1/car/getallcars`);
           console.log(res);
           console.log(res.data);
           console.log(res.data.cars);
@@ -22,7 +24,8 @@ const Cars =  () => {
   //console.log("CarData", CarData);
   return (
     <>
-      <div style={{minHeight: "80vh"}}>
+
+      <div className="cars-page" style={{minHeight: "80vh"}}>
         <h1 className="text-center mb-1" > Explore our Cars</h1>
         <h3 className="text-center mb-1">click on a car to view details</h3>
         <div className="d-flex justify-content-center align-items-center">

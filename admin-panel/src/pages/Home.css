@@ -1,0 +1,55 @@
+/* Main container */
+.menu1 {
+  min-height: 80vh;
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(to right, #f1f5f9, #e0f2fe);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Small heading */
+.menu1 h4 {
+  color: #64748b;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* Main heading */
+.menu1 h1 {
+  font-size: 2.8rem;
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+
+/* Paragraphs */
+.menu1 p {
+  font-size: 1.1rem;
+  color: #334155;
+  margin: 6px 0;
+}
+
+/* Phone icon */
+.menu1 i {
+  color: #16a34a;
+  margin-right: 5px;
+}
+
+/* Highlight phone number */
+.menu1 p:nth-child(4) {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Developer credit */
+.menu1 p:last-child {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+/* Hover effect (optional) */
+.menu1:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.01);
+}

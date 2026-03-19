@@ -12,27 +12,19 @@ const EditModal =(props) =>{
       </div>
       <div className="modal-body">
       <div className ="mb-3">
-        <label htmlfor ="" className="form-label">Name</label>
-        <input type="text" className="form-control mb-3"
+        <label  className="form-label">Name</label>
+        <input  type="text" className="form-control mb-3"
         value={uname}
         onChange={(e) => setUname(e.target.value)} />
         </div>
 
           <div className ="mb-3">
-        <label htmlfor ="" className="form-label">Phone</label>
-        <input type="text" className="form-control mb-3"
+        <label className="form-label">Phone</label>
+        <input  type="text" className="form-control mb-3"
         value={phone}
         onChange={(e) => setPhone(e.target.value)} />
-
-        </div>
-          <div className ="mb-3">
-        <label htmlfor ="" className="form-label">password</label>
-        <input type="text" className="form-control mb-3"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)} />
-        </div>
-         
       </div>
+    </div>
       <div className="modal-footer">
         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => setEditModel(false)}>Close</button>
         <button type="button" className="btn btn-primary" onClick={handleUpdate}>Update</button>

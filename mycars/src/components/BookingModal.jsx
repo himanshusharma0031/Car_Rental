@@ -1,13 +1,14 @@
 import React from 'react';
 const BookingModal = (props) => {
-    const {show,setShow,price,pickupDate,setPickupDate,returnDate,setReturnDate,handleBooking} = props;
+    const {show,setShow,price,startDate,setstartDate,returnDate,setReturnDate,handleBooking,Totalprice,setTotalPrice} = props;
     //total
     const calculateTotal =()=>{
-        if(pickupDate && returnDate){
-            const days = (new Date(returnDate) - new Date(pickupDate)) / (1000 * 60 * 60 * 24);
+        if(startDate && returnDate){
+            const days = (new Date(returnDate) - new Date(startDate)) / (1000 * 60 * 60 * 24);
             return days * price;
         }
     }
+    setTotalPrice(calculateTotal());
     return (
         <>
      <div className="modal d-flex" tabIndex={-1}>
@@ -20,8 +21,8 @@ const BookingModal = (props) => {
       <div className="modal-body">
         <label htmlfor ="" className="form-label">Pickup Date</label>
         <input type="date" className="form-control mb-3"
-        value={pickupDate}
-        onChange={(e) => setPickupDate(e.target.value)} />
+        value={startDate}
+        onChange={(e) => setstartDate(e.target.value)} />
         <label htmlfor ="" className="form-label">Return Date</label>
         <input type="date" className="form-control mb-3"
         value={returnDate}

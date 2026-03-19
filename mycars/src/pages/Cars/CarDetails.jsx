@@ -5,26 +5,38 @@ import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import BookingModal from '../../components/BookingModal';
 import axios from "axios";
+const API = process.env.REACT_APP_API_URL;
 
 
 const CarDetails = () => {
     const user = true;
     const { id } = useParams();
+    console.log(id);
     const [CarDetails,setCarDetails] = useState(""); 
     const [loading , setLoading] = useState(false);
 
     const [show,setShow] = useState(false);
-    const [pickupDate,setPickupDate] = useState(new Date().toISOString().split("T")[0]);
+    const [startDate,setstartDate] = useState(new Date().toISOString().split("T")[0]);
     const [returnDate,setReturnDate] = useState(new Date().toISOString().split("T")[0]);
-    
+    const[Totalprice,setTotalPrice] = useState();
+    const Userid = localStorage.getItem("User");
+    console.log(Userid);
+    const pp = CarDetails.price;
+    console.log(pp);
+    console.log(Totalprice);
+    console.log(startDate);
+    console.log(returnDate);
     //booking function
     const handleBooking = async () => {
         const token = localStorage.getItem("token");
         try {
-            const booking = await axios.post("http://localhost:8000/api/v1/booking/createbooking",{
-                pickupDate,
+            const booking = await axios.post(`${API}/api/v1/booking/createbooking`,{
+                user:Userid,
+               car: id,
+                price:pp,
+                totalPrice:Totalprice,
                 returnDate,
-                carId:id,
+               startDate 
             },
         {
             headers:{
@@ -42,7 +54,7 @@ const CarDetails = () => {
             setLoading(true);
             try {
               //  const carInfo = CarsData.find(car => car.id === parseInt(id));
-              const carInfo = await axios.get(`http://localhost:8000/api/v1/car/getcar/${id}`);
+              const carInfo = await axios.get(`${API}/api/v1/car/getcar/${id}`);
                 if(carInfo.data){
                     console.log("Car Info:", carInfo.data.car);
                     setCarDetails(carInfo.data.car);
@@ -109,11 +121,13 @@ const CarDetails = () => {
                     show ={show}
                     setShow={setShow}
                     price ={CarDetails?.price}
-                    pickupDate ={pickupDate}
-                    setPickupDate ={setPickupDate}
+                    startDate ={startDate}
+                    setstartDate ={setstartDate}
                     returnDate ={returnDate}
                     setReturnDate ={setReturnDate}
                     handleBooking={handleBooking}
+                    Totalprice={Totalprice}
+                    setTotalPrice={setTotalPrice}
                 />}
             </>
         )}

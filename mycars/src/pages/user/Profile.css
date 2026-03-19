@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f4f7fb;
+}
+
+/* Main container */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Profile card */
+.mt-5 {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile text */
+.mt-5 p {
+  font-size: 16px;
+  margin: 8px 0;
+  color: #333;
+}
+
+/* Button */
+.btn-warning {
+  background: linear-gradient(to right, #ff9800, #ffb74d);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-warning:hover {
+  transform: scale(1.05);
+}
+
+/* Booking section */
+.mt-3 {
+  margin-top: 30px;
+}
+
+/* Heading */
+.mt-3 h4 {
+  margin-bottom: 15px;
+  color: #1e3c72;
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Table header */
+.table tr.bg-dark {
+  background: #1e3c72;
+  color: #fff;
+}
+
+/* Table cells */
+.table th,
+.table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Hover effect */
+.table tr:hover {
+  background: #f1f1f1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table th, .table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+}

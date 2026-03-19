@@ -1,0 +1,82 @@
+/* Full page container */
+.container1 {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  /* Car Background Image */
+  background: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70") no-repeat center center/cover;
+  
+  position: relative;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Dark overlay for readability */
+.container1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Content should be above overlay */
+.container1 h1,
+.container1 p,
+.container1 button {
+  position: relative;
+  z-index: 2;
+}
+
+/* Heading */
+.container1 h1 {
+  color: #ffffff;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  animation: fadeDown 1s ease;
+}
+
+/* Tagline */
+.container1 p {
+  color: #e5e7eb;
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+/* Button */
+.btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
