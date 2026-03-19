@@ -18,9 +18,11 @@ const app = express();
 //middelewares
 const corsOptions ={
     origin:['http://localhost:3000',
-        'http://localhost:5173'],
+        'http://localhost:5173',
+    'https://car-rental-s9ua.vercel.app',
+'https://car-rental-7d1i.vercel.app'],
         methods:'GET,POST,PATCH,DELETE',
-        Credentials:true,
+        credentials:true,
 };
 app.use(cors(corsOptions));
 app.use(express.json());
