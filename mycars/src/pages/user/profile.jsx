@@ -37,6 +37,21 @@ const Profile = () =>{
    }
 
 }
+const deleteBooking = async(bookingId) =>{
+     const token = localStorage.getItem("token");
+    try{
+       const deletedbooking = await axios.delete(`${API}/api/v1/booking/deletebooking/${bookingId}`,{
+        headers :{
+            Authorization :`Bearer ${token}`
+        }
+       });
+       console.log(deletedbooking);
+     toast.success("booking deleted successfully!");
+    }catch(error){
+        console.log("Error Occurs:",error);
+    }
+
+}
 
    useEffect(()=>{
         const fetchBookingDetails = async()=>{
@@ -79,6 +94,7 @@ const Profile = () =>{
                 <th>Journey Date</th>
                 <th>Return Date</th>
                 <th>Status</th>
+                <th>Booking deletion</th>
                </tr>
                 {bookingDetails.map((bookings) => (
                 <tr key ={bookings._id}>
@@ -86,6 +102,7 @@ const Profile = () =>{
                 <td>{new Date(bookings.startDate).toLocaleDateString()}</td>
                 <td>{new Date(bookings.returnDate).toLocaleDateString()}</td>
                 <td>{bookings.status}</td>
+                <td>{<button className ="btn btn-warning" onClick ={() => deleteBooking(bookings._id)}>Delete</button>}</td>
                  </tr>
           ))}
                </table>

@@ -148,3 +148,36 @@ export const getUserbooking = async(req,res) =>{
         })
     }
 }
+
+//delete booking
+export const deleteBooking = async(req,res)=>{
+    try{
+         const bookingId = req.params.id;
+         if(!bookingId){
+            return res.status(400).send({
+                success:false,
+                message:"bookinId not found"
+            });
+         }
+         const booking =  await bookingModal.findByIdAndDelete(bookingId);
+            if(!booking){
+            return res.status(400).send({
+                success:false,
+                message:"booking not found"
+            })
+         }
+          res.status(200).send({
+            success:true,
+            message:"Your Bookings deleted succesfully",
+            booking
+         })
+
+    }catch(error){
+        console.error(error);
+        res.status(500).send({
+            success:false,
+            message:"Error in get deletebooking api",
+            error
+        })
+    }
+}
