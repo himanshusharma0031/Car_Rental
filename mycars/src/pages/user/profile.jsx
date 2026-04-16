@@ -46,6 +46,7 @@ const deleteBooking = async(bookingId) =>{
         }
        });
        console.log(deletedbooking);
+      setTimeout(() =>{fetchBookingDetails();},300);
      toast.success("booking deleted successfully!");
     }catch(error){
         console.log("Error Occurs:",error);
@@ -53,8 +54,7 @@ const deleteBooking = async(bookingId) =>{
 
 }
 
-   useEffect(()=>{
-        const fetchBookingDetails = async()=>{
+ const fetchBookingDetails = async()=>{
             setLoading(true);
             const token = localStorage.getItem("token");
             try {
@@ -75,8 +75,9 @@ const deleteBooking = async(bookingId) =>{
                 setLoading(false);
             }
         };
+         useEffect(()=>{
         fetchBookingDetails();
-    },[]);
+         },[]);
     return (
         <>
             <div className = "container" style={{minHeight:"70vh"}}>
