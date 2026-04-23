@@ -46,7 +46,7 @@ const CarDetails = () => {
             toast.success("Car booked successfully!");
             setShow(false);
         } catch (error) {
-            toast.error("please enter correct date");
+            toast.error("please login first or Enter correct date");
             console.error("Error booking car:", error);
         }
     };
